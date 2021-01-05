@@ -5,7 +5,7 @@ import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from './helpers'
 
 const WETH_ADDRESS = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
 // New Stablecoin pair needed!
-const WMATIC_USDC_PAIR = '0x45Bac6629aEE6f95Ffe0ed4F4409017f65BB6aE0' // created block 1587531 // TODO: Add pair
+const WMATIC_USDC_PAIR = '0x45bac6629aee6f95ffe0ed4f4409017f65bb6ae0' // created block 1587531 // TODO: Add pair
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
@@ -20,10 +20,12 @@ export function getBnbPriceInUSD(): BigDecimal {
 }
 
 // token where amounts should contribute to tracked volume and liquidity
-let WHITELIST: string[] = []
+let WHITELIST: string[] = [
+  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174'
+]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
-let MINIMUM_USD_THRESHOLD_NEW_PAIRS = BigDecimal.fromString('1')
+let MINIMUM_USD_THRESHOLD_NEW_PAIRS = BigDecimal.fromString('0')
 
 // minimum liquidity for price to get tracked
 let MINIMUM_LIQUIDITY_THRESHOLD_ETH = BigDecimal.fromString('0')
