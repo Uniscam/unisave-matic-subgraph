@@ -5,12 +5,12 @@ import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from './helpers'
 
 const WETH_ADDRESS = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
 // New Stablecoin pair needed!
-const USDT_WETH_PAIR = '0x8a594f8659850f9cd2210d0bf3e4f7827561207c' // created block 1587531 // TODO: Add pair
+const WMATIC_USDC_PAIR = '0x45Bac6629aEE6f95Ffe0ed4F4409017f65BB6aE0' // created block 1587531 // TODO: Add pair
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
   // let daiPair = Pair.load(DAI_WBNB_PAIR) // dai is token0, disabled for no big liquidity
-  let usdtPair = Pair.load(USDT_WETH_PAIR) // usdt is token0
+  let usdtPair = Pair.load(WMATIC_USDC_PAIR) // usdt is token0
 
   if (usdtPair !== null) {
     return usdtPair.token1Price
